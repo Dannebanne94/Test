@@ -11,6 +11,13 @@ public class HourlyEmployee extends Employee
         this.hoursWorkedPerWeek = hoursWorkedPerWeek;
         this.paymentPerHour = paymentPerHour;
     }
+    
+    @Override
+    public double totalExpenses()
+    {
+        return earning() * 4;
+    }
+    
     @Override
     public double getPaymentAmount()
     {

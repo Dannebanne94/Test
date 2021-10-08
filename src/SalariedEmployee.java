@@ -15,6 +15,13 @@ public class SalariedEmployee extends Employee
         System.out.print("Salary " + super.getFirstName() + ":");
         return earning() * 4;
     }
+    
+    @Override
+    public double totalExpenses()
+    {
+        return earning() * 4;
+    }
+    
     @Override
     double earning()
     {
