@@ -1,8 +1,8 @@
 
 public class HourlyEmployee extends Employee
 {
-    private double hoursWorkedPerWeek;
-    private double paymentPerHour;
+    private final double hoursWorkedPerWeek;
+    private final double paymentPerHour;
     
     HourlyEmployee(String firstName, String lastName, long ssn, 
             double hoursWorkedPerWeek, double paymentPerHour)
@@ -10,6 +10,12 @@ public class HourlyEmployee extends Employee
         super(firstName, lastName, ssn);
         this.hoursWorkedPerWeek = hoursWorkedPerWeek;
         this.paymentPerHour = paymentPerHour;
+    }
+    @Override
+    public double getPaymentAmount()
+    {
+        System.out.print("Salary " + super.getFirstName() +":");
+        return earning() * 4;
     }
     
     @Override
@@ -23,6 +29,6 @@ public class HourlyEmployee extends Employee
     {
         return super.getFirstName() + " " + super.getLastName()
                 + "\nSocial security number:" + super.getSsn()
-                + "\nWeekly earnings:" + earning() + "\n";
+                + "\nWeekly salary:" + earning() + "\n";
     }
 }

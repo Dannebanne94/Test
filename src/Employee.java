@@ -1,9 +1,9 @@
 
-public abstract class Employee 
+public abstract class Employee implements IPayable
 {
-    private String firstName;
-    private String lastName;
-    private long ssn;
+    private final String firstName;
+    private final String lastName;
+    private final long ssn;
     
     Employee(String firstName, String lastName, long ssn)
     {
@@ -11,6 +11,9 @@ public abstract class Employee
         this.lastName = lastName;
         this.ssn = ssn;
     }
+    
+    @Override
+    public abstract double getPaymentAmount();
     
     @Override
     public String toString()

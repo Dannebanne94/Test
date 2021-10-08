@@ -4,12 +4,23 @@ public class Main
     
     public static void main(String[] args) 
     {
-        HourlyEmployee jason = new HourlyEmployee("Karl", "Smith", 197404169435L, 30, 147);
-        System.out.println(jason.toString());
-        SalariedEmployee allie = new SalariedEmployee("Allie", "Persson", 199907287342L, 7654);
+        HourlyEmployee karl = new HourlyEmployee("Karl", "Smith", 197404169435L, 30, 100);
+        System.out.println(karl.toString());
+        SalariedEmployee allie = new SalariedEmployee("Allie", "Persson", 199209146809L, 5000);
         System.out.println(allie.toString());
-        HourlyEmployee torkild = new HourlyEmployee("Torkild", "Krubster", 199209146809L, 47.5, 153.7);
-        System.out.println(torkild.toString());
+        
+        Invoice bill1 = new Invoice("123456789", 2, 1000);
+        Invoice bill2 = new Invoice("987654321", 4, 2000);
+        
+        IPayable[] salaryExpenses = {karl, allie, bill1, bill2};
+        
+        System.out.println("Monthly expenses:\n");
+        
+        for (IPayable salaryExpense : salaryExpenses)
+        {
+            System.out.println(salaryExpense.getPaymentAmount());
+            System.out.println("");
+        }
     }
 
 }

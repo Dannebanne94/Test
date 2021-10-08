@@ -10,6 +10,12 @@ public class SalariedEmployee extends Employee
     }
 
     @Override
+    public double getPaymentAmount()
+    {
+        System.out.print("Salary " + super.getFirstName() + ":");
+        return earning() * 4;
+    }
+    @Override
     double earning()
     {
         return weeklySalary;
