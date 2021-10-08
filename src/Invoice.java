@@ -16,7 +16,13 @@ public class Invoice implements IPayable
     public double getPaymentAmount()
     {
         System.out.println("Invoice number:" + invoiceNumber);
-        System.out.print("Total:");
+        System.out.print("Amount:");
+        return quantity * pricePerItem;
+    }
+    
+    @Override
+    public double totalExpenses()
+    {
         return quantity * pricePerItem;
     }
 }
